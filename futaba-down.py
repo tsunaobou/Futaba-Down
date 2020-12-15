@@ -42,7 +42,6 @@ duplicate_delete = list(set(geturl))
 
 rejudge = [redo for redo in duplicate_delete if 'jump.php' not in redo]
 
-
 #それぞれの拡張子を含むアドレスだけを抽出した配列を６つ作成
 #これは正規表現でやるのが面倒だったからと言う理由もある。
 jpgget = [feature for feature in rejudge if 'jpg' in feature]
@@ -60,7 +59,7 @@ download_ready = list(map(lambda x: head + x,download_list))
 #ダウンロードする個数を数える
 download_number = len(download_list)
 
-#ダウンロード前のフォルダ作成、移動
+#ダウンロード前のフォルダの作成と移動
 os.makedirs(pagetitle,exist_ok=True)
 os.chdir(f"{pagetitle}")
 
@@ -73,6 +72,5 @@ for count,url in enumerate(download_ready,1):
     print(f"{download_number}個中{count}個のダウンロード完了 2秒wait中")
     #スリープを一回ごとに2sec挟む
     sleep(2)
-
 
 print(f"{download_number}個のメディアのダウンロードが完了しました！")
