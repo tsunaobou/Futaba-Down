@@ -14,7 +14,6 @@ name = input("ダウンロードしたいスレのURLを入力:")
 #後で使うためにスレのURLを少し加工して持っておく
 name2 = re.match(r'https.*?net',name)
 #↓ここでname2でマッチングされた文字列をheadとして取得しておく
-#参考　https://note.nkmk.me/python-re-match-object-span-group/
 head = name2.group()
 
 #getリクエスト実行
